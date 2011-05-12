@@ -1,0 +1,29 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+    <link href="../../../../../concordion.css" rel="stylesheet" type="text/css" />
+    <body>
+        <h1>FaceBookLogout</h1>
+        <pre>
+            When User is logged in
+            Afer clicking Account and logout
+            User is logged out.
+        </pre>
+        <div class="example">
+            <h3>Example</h3>
+            <div>
+                <p>Given:</p>
+                <span>username "<b concordion:assertEquals="getUserName()">Siber Numberfour</b>" is displayed.</span>
+                <p>When:</p>
+                <span concordion:execute="loadUserMenu()">User clicks <b>Acount</b></span>
+                <p>And:</p>
+                then <span concordion:execute="logout()">clicks Logout</span>
+                <p>Result:</p>
+                <span>Login page <span concordion:assertTrue="isLoginPageLoaded()">is displayed</span></span>
+            </div>
+        </div>
+    </body>
+</html>

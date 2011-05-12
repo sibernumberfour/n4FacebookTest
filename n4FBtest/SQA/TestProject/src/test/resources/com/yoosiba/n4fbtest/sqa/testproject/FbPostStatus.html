@@ -1,0 +1,29 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+    <link href="../../../../../concordion.css" rel="stylesheet" type="text/css" />
+    <body>
+        <h1>FaceBookStatus</h1>
+        <pre>
+            When User is logged in
+            after loading news page
+            user can post a status.
+        </pre>
+        <div class="example">
+            <h3>Example</h3>
+            <div>
+                <p>Given:</p>
+                <span>username "<b concordion:assertEquals="getUserName()">Siber Numberfour</b>" is displayed.</span>
+                <p>When:</p>
+                <span concordion:assertTrue="loadNewsPage()">User laods <b>News</b></span>
+                <p>And:</p>
+                <span concordion:execute="postStatus(#status)">User posts <b concordion:set="#status">blahh</b> </span>
+                <p>Result:</p>
+                <span concordion:assertEquals="getStatus()">blahh</span> is displayed
+            </div>
+        </div>
+    </body>
+</html>

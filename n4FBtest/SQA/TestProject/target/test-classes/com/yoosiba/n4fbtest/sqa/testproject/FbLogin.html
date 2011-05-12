@@ -1,0 +1,32 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+    <link href="../../../../../concordion.css" rel="stylesheet" type="text/css" />
+    <body>
+        <h1>FaceBookLogin</h1>
+        <pre>
+            When user opens browser, login page is displayed.
+            After providing mail and password user is logged in.
+        </pre>
+        <div class="example">
+            <h3>Example</h3>
+            <div>
+                <p>Given:</p>
+                <div concordion:assertTrue="isEnvReady()">Browser is opened</div>
+                <p>When:</p>
+                <span>User navigates to <b concordion:set="#webAddress">http://www.facebook.com</b> </span> <span concordion:execute="loadFaceBook(#webAddress)"/>
+                <p>Then:</p>
+                <span>Login page<span concordion:assertTrue="isLoginPageLoaded()">is displayed</span></span>
+                <p>After:</p>
+                <span>providing credentials<span concordion:execute="doLogin()"/></span>
+                <p>Result:</p>
+                <span><span concordion:assertTrue="isHomePageLoaded()">Facbook Home page is displayed</span></span>
+                <p>And:</p>
+                <span>username "<b concordion:assertEquals="getUserName()">Siber Numberfour</b>" is displayed.</span>
+            </div>
+        </div>
+    </body>
+</html>
